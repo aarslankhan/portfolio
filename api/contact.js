@@ -16,11 +16,14 @@ export default async function handler(req, res) {
     });
 
     const mailOptions = {
-      from: process.env.SMTP_USER, // Sender address
-      to: 'arslan@clickflow.tech', // Your email address
-      subject: 'New Contact Form Submission',
-      text: message,
-    };
+        from: process.env.SMTP_USER, // Your authenticated SMTP user
+        to: 'arslan@clickflow.tech', // Your email address
+        subject: 'New Contact Form Submission',
+        text: `Name: ${from_name}\nEmail: ${from_email}\nMessage: ${message}`,
+        headers: {
+          'Reply-To': from_email, // Set reply-to header to sender's email
+        },
+      };
 
     try {
       await transporter.sendMail(mailOptions);
