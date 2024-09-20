@@ -14,6 +14,7 @@ const Contact = () => {
   });
 
   const [loading, setLoading] = useState(false);
+  const [statusMessage, setStatusMessage] = useState(""); // State to store success/error messages
 
   const handleChange = (e) => {
     const { target } = e;
@@ -28,7 +29,10 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    const apiURL = process.env.REACT_APP_API_URL || "https://arslan.clickflow.tech/api"
+    setStatusMessage(""); // Reset status message on form submission
+
+    const apiURL = process.env.REACT_APP_API_URL || "https://arslan.clickflow.tech/api";
+    
     try {
       const response = await fetch(`${apiURL}/contact`, {
         method: 'POST',
@@ -45,14 +49,14 @@ const Contact = () => {
       const data = await response.json();
 
       if (data.status === 'success') {
-        alert("Thank you. I will get back to you as soon as possible.");
-        setForm({ name: "", email: "", message: "" });
+        setStatusMessage("Thank you! I will get back to you as soon as possible.");
+        setForm({ name: "", email: "", message: "" }); // Clear the form after success
       } else {
         throw new Error(data.error);
       }
     } catch (error) {
+      setStatusMessage("Ahh, something went wrong. Please try again.");
       console.error(error);
-      alert("Ahh, something went wrong. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -113,6 +117,13 @@ const Contact = () => {
             {loading ? "Sending..." : "Send"}
           </button>
         </form>
+
+        {/* Display the status message */}
+        {statusMessage && (
+          <p className='mt-4 text-center text-white font-medium'>
+            {statusMessage}
+          </p>
+        )}
       </motion.div>
 
       <motion.div
