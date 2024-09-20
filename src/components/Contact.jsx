@@ -28,7 +28,7 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    const apiURL = process.env.REACT_APP_API_URL || "https://arslan.clickflow.tech/api/contact"
+    const apiURL = process.env.REACT_APP_API_URL || "https://arslan.clickflow.tech/api"
     try {
       const response = await fetch(`${apiURL}/contact`, {
         method: 'POST',
