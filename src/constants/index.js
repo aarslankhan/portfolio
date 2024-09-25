@@ -15,15 +15,15 @@ import {
   git,
   figma,
   docker,
-  carrent,
-  jobit,
-  tripguide,
   threejs,
 } from "../assets";
 import algo from "../assets/company/algo.png";
 import jps from "../assets/company/jps.png";
 import fiverr from "../assets/company/fiverr.png";
 import logos from "../assets/company/logos.webp";
+import japanstation from "../assets/japanstation.png"
+import  clickflow from "../assets/clickflow.png"
+import  algorepublic from "../assets/algorepublic.png"
 
 export const navLinks = [
   {
@@ -198,9 +198,9 @@ const testimonials = [
 
 const projects = [
   {
-    name: "Car Rent",
+    name: "Altegon",
     description:
-      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+      "Web-based platform that enables users to search, book, and manage WebRTC solutions from various providers, offering a convenient and efficient solution for real-time communication needs.",
     tags: [
       {
         name: "react",
@@ -215,16 +215,16 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: carrent,
-    source_code_link: "https://github.com/",
+    image: algorepublic,
+    source_code_link: "https://altegon.com",
   },
   {
-    name: "Job IT",
+    name: "Japan Station",
     description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+      "With JapanStation, I contributed to the backend development for a company that outsources resources to clients in Japan, delivering tailored solutions to meet diverse business needs efficiently.",
     tags: [
       {
-        name: "react",
+        name: "node",
         color: "blue-text-gradient",
       },
       {
@@ -232,33 +232,33 @@ const projects = [
         color: "green-text-gradient",
       },
       {
-        name: "scss",
+        name: "express",
         color: "pink-text-gradient",
       },
     ],
-    image: jobit,
-    source_code_link: "https://github.com/",
+    image: japanstation,
+    source_code_link: "https://japanstation.com.pk",
   },
   {
-    name: "Trip Guide",
+    name: "Clickflow",
     description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+      "For ClickFlow, I developed both the backend and frontend, creating a seamless platform that enhances user experience and streamlines workflow management effectively.",
     tags: [
       {
         name: "nextjs",
         color: "blue-text-gradient",
       },
       {
-        name: "supabase",
+        name: "vite",
         color: "green-text-gradient",
       },
       {
-        name: "css",
+        name: "tailwind",
         color: "pink-text-gradient",
       },
     ],
-    image: tripguide,
-    source_code_link: "https://github.com/",
+    image: clickflow,
+    source_code_link: "https://clickflow.tech",
   },
 ];
 
